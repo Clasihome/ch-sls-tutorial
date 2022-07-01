@@ -1,0 +1,14 @@
+{
+  "name": "ch-sls-tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "AWS_PROFILE=ch-tutorial SLS_DEBUG=* sls offline --stage dev",
+    "deploy:dev": "SLS_DEBUG=* sls deploy --aws-profile ch-dev --stage dev",
+    "deploy:prod": "SLS_DEBUG=* sls deploy --aws-profile ch-dev --stage prod"
+  },
+  "devDependencies": {
+    "serverless-offline": "^8.8.0"
+  }
+}
