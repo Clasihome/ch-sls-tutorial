@@ -9,6 +9,10 @@
     "deploy:prod": "SLS_DEBUG=* sls deploy --aws-profile ch-tutorial --stage prod"
   },
   "devDependencies": {
+    "prisma": "^4.0.0",
     "serverless-offline": "^8.8.0"
+  },
+  "dependencies": {
+    "@prisma/client": "4.0.0"
   }
 }

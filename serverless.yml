@@ -20,15 +20,39 @@ provider:
 
 package:
   patterns:
-#    - '!exclude-me.js'
-#    - '!exclude-me-dir/**'
-#    - include-me.js
-#    - include-me-dir/**
+    - '!node_modules/.prisma/client/libquery_engine-*'
+    - 'node_modules/.prisma/client/libquery_engine-rhel-*'
+    - '!node_modules/prisma/libquery_engine-*'
+    - '!node_modules/@prisma/engines/**'
 
 functions:
-  hello:
-    handler: src/handler.hello
+  create:
+    handler: src/handler.create
     events:
       - httpApi:
-          path: /hello/good-day
+          path: /tutorial/user/create
           method: post
+  update:
+    handler: src/handler.update
+    events:
+      - httpApi:
+          path: /tutorial/user/update
+          method: post
+  delete:
+    handler: src/handler.delete
+    events:
+      - httpApi:
+          path: /tutorial/user/delete
+          method: post
+  all:
+    handler: src/handler.all
+    events:
+      - httpApi:
+          path: /tutorial/user/all
+          method: post
+  getUserById:
+    handler: src/handler.getUserById
+    events:
+      - httpApi:
+          path: /tutorial/user/getUserById
+          method: post                    
